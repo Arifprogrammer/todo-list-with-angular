@@ -1,0 +1,28 @@
+<form
+  [formGroup]="addTodoForm"
+  (ngSubmit)="handleTodo(addTodoForm.value)"
+  class="mt-10 border-2 border-[#7f5539] px-10 py-5 w-max mx-auto rounded-lg text-[#7f5539]"
+>
+  <label for="title" class="block text-lg font-semibold">Title: </label>
+  <input
+    type="text"
+    name="title"
+    id="title"
+    formControlName="title"
+    class="w-full rounded-lg py-1 px-4 border-2 border-[#7f5539] bg-transparent mb-4 text-slate-700 font-semibold text-md"
+  />
+  <label for="text" class="block text-lg font-semibold"> Text: </label>
+  <textarea
+    name="text"
+    id="text"
+    cols="30"
+    rows="3"
+    formControlName="text"
+    class="w-full rounded-lg py-2 px-4 border-2 border-[#7f5539] bg-transparent text-slate-700 font-semibold text-md"
+  ></textarea>
+  <input
+    type="submit"
+    value="Add Note"
+    class="bg-[#6b836a] text-white px-4 py-1 rounded-lg mt-4 font-semibold text-md"
+  />
+</form>

@@ -1,0 +1,29 @@
+<add-todo></add-todo>
+<div
+  class="mx-auto w-[480px] p-10 rounded-lg shadow-md shadow-black mt-12 bg-[#e9edc9] space-y-4 border-2 border-[#588157]"
+  *ngIf="notes.length > 0"
+>
+  <div
+    *ngFor="let note of notes"
+    class="border-2 border-[#dad7cd] py-4 px-6 space-y-2 rounded-xl bg-[#fefae0]"
+  >
+    <p class="text-xl font-semibold font-mono">{{ note.title }}</p>
+    <p class="text-sm text-gray-500 font-semibold font-sans">
+      {{ note.text.length > 50 ? note.text.slice(0, 50) + "..." : note.text }}
+    </p>
+    <div class="flex gap-3">
+      <button
+        [routerLink]="['/todo', note.id]"
+        class="text-xs bg-orange-300 border-2 border-black px-2 rounded-lg font-semibold"
+      >
+        See Details
+      </button>
+      <button
+        (click)="handleDelete(note)"
+        class="text-xs bg-red-300 border-2 border-black px-2 rounded-lg font-semibold"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
